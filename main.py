@@ -5,12 +5,18 @@ def print_hi(name):
     print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
 
 def process_file():
-    tree=ET.parse(".\Money.drawio.xml")
+    tree=ET.parse(".\Transfers.drawio.xml")
     mxfile=tree.getroot();
     print(mxfile.tag);
     root=mxfile[0][0][0]
     print(mxfile[0][0][0].tag)
     for element in root.iter('object'):
+        if 'edge' in element[0].attrib:
+            print("Laczenie")
+
+        if 'vertex' in element[0].attrib:
+            print("element")
+
         print(element.tag,element.attrib)
 
 
