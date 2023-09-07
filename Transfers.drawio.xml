@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mxfile host="app.diagrams.net" modified="2023-09-06T19:59:51.570Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" etag="e75EdO0Rf3lz2tBkfTxN" version="21.7.2" type="google">
+<mxfile host="app.diagrams.net" modified="2023-09-07T10:59:22.672Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" etag="gQnAg6SGFs2HSTFIC4Ba" version="21.7.2" type="google">
   <diagram name="Page-1" id="eeoZ2RxLdAdTSFaNzKRh">
     <mxGraphModel dx="2075" dy="1117" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -8,15 +8,6 @@
         <mxCell id="qV2qCC051WoPPza5vxuv-1" value="Pensja" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="90" y="360" width="120" height="60" as="geometry" />
         </mxCell>
-		<mxCell id="qV2qCC051WoPPza5vxuv-18" value="Proxy2" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="560" y="390" width="120" height="60" as="geometry" />
-        </mxCell>
-		<object label="ProxyKomorska&lt;br&gt;Poduszka: %Poduszka%" placeholders="1" Poduszka="1000" id="qV2qCC051WoPPza5vxuv-20">
-          <mxCell style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-            <mxGeometry x="590" y="100" width="120" height="60" as="geometry" />
-          </mxCell>
-        </object>
-		
         <object label="TransferDay: %TransferDay%&lt;br&gt;Value: %Value%" placeholders="1" TransferDay="1" Value="1124,80" id="qV2qCC051WoPPza5vxuv-17">
           <mxCell style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;" edge="1" parent="1" source="qV2qCC051WoPPza5vxuv-1" target="qV2qCC051WoPPza5vxuv-20">
             <mxGeometry width="160" relative="1" as="geometry">
@@ -25,6 +16,9 @@
             </mxGeometry>
           </mxCell>
         </object>
+        <mxCell id="qV2qCC051WoPPza5vxuv-18" value="Proxy2" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="390" width="120" height="60" as="geometry" />
+        </mxCell>
         <object label="TransferDay: %TransferDay%&lt;br&gt;Value: %Value%" placeholders="1" TransferDay="1" Value="100" id="qV2qCC051WoPPza5vxuv-19">
           <mxCell style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;" edge="1" parent="1" source="qV2qCC051WoPPza5vxuv-1" target="qV2qCC051WoPPza5vxuv-18">
             <mxGeometry width="160" relative="1" as="geometry">
@@ -33,7 +27,11 @@
             </mxGeometry>
           </mxCell>
         </object>
-        
+        <object label="Name: %Name%&lt;br&gt;Poduszka: %Poduszka%" placeholders="1" Poduszka="1000" Name="ProxyKomorska" id="qV2qCC051WoPPza5vxuv-20">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+            <mxGeometry x="590" y="100" width="150" height="60" as="geometry" />
+          </mxCell>
+        </object>
       </root>
     </mxGraphModel>
   </diagram>

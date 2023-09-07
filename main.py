@@ -1,5 +1,6 @@
 import xml.etree.ElementTree as ET
 from Edge import Edge
+from Vertex import Vertex
 
 edges = []
 vertexes = []
@@ -10,26 +11,26 @@ def print_hi(name):
     print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
 
 def loadxml():
-    tree = ET.parse(".\Transfers.drawio.xml")
+    tree = ET.parse("G:\My Drive\Transfers.drawio")
     mxfile = tree.getroot();
     print(mxfile.tag);
     root = mxfile[0][0][0]
     print(mxfile[0][0][0].tag)
     for element in root.iter('object'):
         if 'edge' in element[0].attrib:
-           #
-            #edges.append(edge)
-            print(element.attrib["TransferDay"])
-            print(element.attrib["Value"])
+            #print(element.attrib["TransferDay"])
+            #print(element.attrib["Value"])
             edge = Edge(element.attrib["TransferDay"],element.attrib["Value"])
             edges.append(edge)
-            print(element.attrib)
-            print("edge")
+            #print(element.attrib)
+            #print("edge")
 
         if 'vertex' in element[0].attrib:
-            vertexes.append(element[0])
+            vertex=Vertex(element.attrib["Name"],10)
+            vertexes.append(vertex)
+            #vertexes.append(vertex)
             #print("element")
-            #print(element.tag, element.attrib)
+            print(element.tag, element.attrib)
 
 def process_file():
     loadxml()
