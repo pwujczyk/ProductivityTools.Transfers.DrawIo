@@ -34,7 +34,7 @@ def loadxml():
 
 def build_dependency_from_root(name):
     root=[element for element in vertexes if element.name == name]
-    print(root)
+    print(root.name)
 
 def process_file():
     loadxml()
