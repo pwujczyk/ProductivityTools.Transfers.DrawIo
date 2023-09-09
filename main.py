@@ -15,14 +15,14 @@ def print_hi(name):
 def loadxml():
     tree = ET.parse("d:\\trash\\Transfers.drawio.xml")
     mxfile = tree.getroot();
-    print(mxfile.tag);
+    #print(mxfile.tag);
     root = mxfile[0][0][0]
-    print(mxfile[0][0][0].tag)
+    #print(mxfile[0][0][0].tag)
     for element in root.iter('object'):
         if 'edge' in element[0].attrib:
             #print(element.attrib["TransferDay"])
             #print(element.attrib["Value"])
-            print(element.attrib["Value"])
+            #print(element.attrib["Value"])
             edge = Edge(element.attrib["TransferDay"],element.attrib["Value"], element[0].attrib["source"], element[0].attrib["target"])
             edges.append(edge)
             #print(element.attrib)
@@ -33,7 +33,7 @@ def loadxml():
             nodes.append(vertex)
             #vertexes.append(vertex)
             #print("element")
-            print(element.tag, element.attrib)
+            #print(element.tag, element.attrib)
 
 def build_dependency_recursive_nodes(edge):
     for node in nodes:
@@ -45,7 +45,7 @@ def build_dependency_recursive_edges(node):
         if edge.source == node.id:
             node.add_edge(edge)
             build_dependency_recursive_nodes(edge)
-            print("source found")
+            #print("source found")
     return node
 
 
@@ -58,8 +58,6 @@ def build_dependency_from_root(name):
     result=build_dependency_recursive_edges(sourceNode)
     return result
 
-def process_file():
-    loadxml()
 
 def print_transfer_for_edge(vertex):
     sum=0
@@ -67,6 +65,7 @@ def print_transfer_for_edge(vertex):
         sum+=edge.value
         print(f'{edge.targetNode.name:30} {edge.value:10}')
     print(sum)
+    print("========")
 
 
 def process_for_category(category):
@@ -81,16 +80,20 @@ def get_categories():
         data = myfile.read()
         parsed_json = json.loads(data)
         x=parsed_json["TransfersCategories"]
-        print(x)
+        return x
 
     #categories=data["TransfersCategories"]
     #print(data)
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    #process_file();
-    get_categories();
-   # process_for_category("Pensja")
+    loadxml()
+    categories=get_categories();
+    categories_array=categories.split(',');
+    for category in categories_array:
+        print(category)
+        process_for_category(category)
+    #process_for_category("Pensja")
     #print("============")
     #process_for_category("ProxyKomorska")
     #print("============")
