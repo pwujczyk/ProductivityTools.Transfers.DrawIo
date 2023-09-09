@@ -1,6 +1,16 @@
 class Edge:
+
+
+
     def __init__(self, transferDay, value, source, target):
         self.transferDay=transferDay
-        self.value=value
+        if (value!=''):
+            self.value = float(value.replace(',','.'))
+        else:
+            self.value=0
+
         self.source=source
-        self.destination=target
+        self.target=target
+
+    def add_node(self, node):
+        self.targetNode=node
