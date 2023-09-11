@@ -3,6 +3,7 @@ from Edge import Edge
 from Vertex import Vertex
 import os
 import json
+import api_caller
 
 edges = []
 nodes = []
@@ -99,7 +100,7 @@ if __name__ == '__main__':
     #print("============")
     #process_for_category("ProxyKameralne")
 
-
+    api_caller.print_hi('lololol')
     print_hi('PyCharm')
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
