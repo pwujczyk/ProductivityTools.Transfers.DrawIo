@@ -1,5 +1,9 @@
 import requests
 
 def print_hi(name):
-    response = requests.get("https://api.open-notify.org/this-api-doesnt-exist")
+    url="https://localhost:7250/Transfer/Add"
+
+    obj={'Date':'2023-01-01T00:00:00', 'Category':'car','Name':'fef','Value':33}
+    response = requests.post(url, json=obj, verify=False)
+    print(response.text)
     print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
