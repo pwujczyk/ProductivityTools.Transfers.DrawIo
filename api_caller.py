@@ -7,3 +7,9 @@ def print_hi(name):
     response = requests.post(url, json=obj, verify=False)
     print(response.text)
     print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+
+    print("Call for token")
+    url = "https://localhost:7250/CustomToken/GetPython"
+    response=requests.get(url,json={}, verify=False)
+    print(response.text)
+    print("call for token finished")
