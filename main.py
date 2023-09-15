@@ -4,6 +4,7 @@ from Vertex import Vertex
 import os
 import json
 import api_caller
+import master_configuration_provider
 
 edges = []
 nodes = []
@@ -74,14 +75,8 @@ def process_for_category(category):
     print_transfer_for_edge(node)
 
 def get_categories():
-    masterconfiguration_path= os.getenv('MasterConfigurationPath')
-    print(masterconfiguration_path)
-    filepath=masterconfiguration_path+"ProductivityTools.MasterConfiguration.json"
-    with open(filepath,  encoding="utf-8-sig") as myfile:
-        data = myfile.read()
-        parsed_json = json.loads(data)
-        x=parsed_json["TransfersCategories"]
-        return x
+    categories=master_configuration_provider.get_master_configuration_value("TransfersCategories")
+    return categories;
 
     #categories=data["TransfersCategories"]
     #print(data)
