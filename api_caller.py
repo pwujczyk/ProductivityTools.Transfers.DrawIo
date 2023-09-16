@@ -1,4 +1,5 @@
 import requests
+import master_configuration_provider
 
 def get_custom_token():
     print("Call for token")
@@ -9,7 +10,9 @@ def get_custom_token():
     return response.text
 
 def get_access_token(custom_token):
-    url="https://identitytoolkit.googleapis.com/v1/accounts:signInWithCustomToken?key=AIzaSyAr0HCAH_e80NeivpRm7PJls50O0sX2Y18"
+    transfers_firebase_webapi_key=master_configuration_provider.get_master_configuration_value("TransfersFirebaseWebApiKey")
+    print(transfers_firebase_webapi_key)
+    url=f"https://identitytoolkit.googleapis.com/v1/accounts:signInWithCustomToken?key={transfers_firebase_webapi_key}"
     json={'token':custom_token, 'returnSecureToken':True}
     response=requests.post(url,json=json,verify=False)
     print(response)
