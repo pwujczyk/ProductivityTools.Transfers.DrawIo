@@ -95,7 +95,7 @@ if __name__ == '__main__':
     #print("============")
     #process_for_category("ProxyKameralne")
 
-    api_caller.print_hi('lololol')
+    api_caller.add_new_transfer_instance('lololol')
     print_hi('PyCharm')
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/

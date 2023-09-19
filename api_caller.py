@@ -21,15 +21,23 @@ def get_access_token(custom_token):
     idToken=js["idToken"]
     return idToken
 
-def print_hi(name):
+def get_id_token():
     custom_token = get_custom_token()
-    idToken=get_access_token(custom_token)
+    idToken = get_access_token(custom_token)
+    return idToken
 
+def add_new_transfer_instance(name):
+    id_token=get_id_token();
     url="https://localhost:7250/Transfer/Add"
-
     obj={'Date':'2023-01-01T00:00:00', 'Category':'car','Name':'fef','Value':33}
-    headers={'Authorization':f'Bearer {idToken}', 'Content-Type': 'application/json'}
+    headers={'Authorization':f'Bearer {id_token}', 'Content-Type': 'application/json'}
     response = requests.post(url, json=obj, headers=headers, verify=False)
     print(response.status_code)
     print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
 
+def get_last_transfer_istances():
+    id_token=get_id_token()
+    url = "https://localhost:7250/Transfer/List"
+    obj = {'Name': 'Proxy'}
+    headers = {'Authorization': f'Bearer {id_token}', 'Content-Type': 'application/json'}
+    response = requests.post(url, json=obj, headers=headers, verify=False)
