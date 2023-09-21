@@ -5,6 +5,8 @@ import os
 import json
 import api_caller
 import master_configuration_provider
+from datetime import date
+
 
 edges = []
 nodes = []
@@ -95,7 +97,9 @@ if __name__ == '__main__':
     #print("============")
     #process_for_category("ProxyKameralne")
 
-    api_caller.add_new_transfer_instance('lololol')
+    today = date.today()
+
+    api_caller.add_new_transfer_instance(today,'category','name',99)
     print_hi('PyCharm')
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/

@@ -1,6 +1,7 @@
 import requests
 import master_configuration_provider
 import json
+from datetime import date
 
 
 def get_custom_token():
@@ -26,14 +27,15 @@ def get_id_token():
     idToken = get_access_token(custom_token)
     return idToken
 
-def add_new_transfer_instance(name):
+def add_new_transfer_instance(date, category, name, value):
     id_token=get_id_token();
     url="https://localhost:7250/Transfer/Add"
-    obj={'Date':'2023-01-01T00:00:00', 'Category':'car','Name':'fef','Value':33}
+    obj={'Date':date.strftime("%Y-%m-%dT00:00:00"), 'Category':category,'Name':name,'Value':value}
     headers={'Authorization':f'Bearer {id_token}', 'Content-Type': 'application/json'}
     response = requests.post(url, json=obj, headers=headers, verify=False)
     print(response.status_code)
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+    print(f'Request done')  # Press Ctrl+F8 to toggle the breakpoint.
+    #2023-01-01T00:00:00
 
 def get_last_transfer_istances():
     id_token=get_id_token()
